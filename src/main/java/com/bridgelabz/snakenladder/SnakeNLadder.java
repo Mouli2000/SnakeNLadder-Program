@@ -15,18 +15,32 @@ public class SnakeNLadder {
 		else
 			System.out.println("This Game Will Be Played With Single Player...");
 		Random random = new Random();
-		int die = random.nextInt(6)+1;
-		System.out.println("Die Number : "+die);
-		int options = random.nextInt(3);
-		switch(options){
-		case 1: position = position + die;
+		for(int i=0; position<=100; i++) {
+			int die = random.nextInt(6)+1;
+			System.out.println("\nDie Number : "+die);
+			int options = random.nextInt(3);
+			if(position < 100) {
+				switch(options){
+				case 1: position = position + die;
+						System.out.println("Player Got Ladder !!!");
+						break;
+				case 2: position = position - die;
+						System.out.println("Player Got Snake !!!");
+						break;
+				default: System.out.println("No Play..."); 
+						 position = position;
+				}
+				if(position > 100) {position = position - die;}
 				System.out.println("Player Position : "+position);
-				break;
-		case 2: position = position - die;
-				System.out.println("Player Position : "+position);
-				break;
-		default: System.out.println("No Play..."); 
-				 System.out.println("Player Position : "+position);
+				if(position == 100) {
+					System.out.println("\nPlayer Won The Game");
+					break;
+				}
+				else if(position < 0) {
+					position = 0;
+					System.out.println("Player Psoition : "+position);
+				}
+			}
 		}
 	}
 }
