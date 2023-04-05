@@ -7,6 +7,7 @@ public class SnakeNLadder {
 		
 		int player = 1;
 		int position = 0;
+		int dieRolls = 0;
 		if(player == 1 && position == 0) {
 			System.out.println("Player Number : "+player);
 			System.out.println("Starting Position : "+position);
@@ -15,6 +16,7 @@ public class SnakeNLadder {
 			System.out.println("This Game Will Be Played With Single Player...");
 		Random random = new Random();
 		for(int i=0; position<=100; i++) {
+			dieRolls++;
 			int die = random.nextInt(6)+1;
 			System.out.println("\nDie Number : "+die);
 			int options = random.nextInt(3);
@@ -41,5 +43,6 @@ public class SnakeNLadder {
 				}
 			}
 		}
+		System.out.println("\nDice Rolled : "+dieRolls);
 	}
 }
