@@ -6,7 +6,6 @@ public class SnakeNLadder {
 
 	public static void main(String[] args) {
 		
-		System.out.print("Enter Player Number : ");
 		int player = 1;
 		int position = 0;
 		if(player == 1 && position == 0) {
@@ -18,5 +17,16 @@ public class SnakeNLadder {
 		Random random = new Random();
 		int die = random.nextInt(6)+1;
 		System.out.println("Die Number : "+die);
+		int options = random.nextInt(3);
+		switch(options){
+		case 1: position = position + die;
+				System.out.println("Player Position : "+position);
+				break;
+		case 2: position = position - die;
+				System.out.println("Player Position : "+position);
+				break;
+		default: System.out.println("No Play..."); 
+				 System.out.println("Player Position : "+position);
+		}
 	}
 }
