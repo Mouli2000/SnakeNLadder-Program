@@ -3,7 +3,6 @@ package com.bridgelabz.snakenladder;
 import java.util.Random;
 
 public class SnakeNLadder {
-
 	public static void main(String[] args) {
 		
 		int player = 1;
